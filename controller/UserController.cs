@@ -21,10 +21,10 @@ namespace BarberSchedules.Controller
             return Ok(await _userInterface.GetUsers());
         }
 
-        [HttpGet("getUserById")]
-        public async Task<IActionResult> GetUserById([FromBody] int userId)
+        [HttpGet("getUserById/{id}")]
+        public async Task<IActionResult> GetUserById([FromRoute] int id)
         {
-            return Ok(await _userInterface.GetById(userId));
+            return Ok(await _userInterface.GetById(id));
         }
 
         [HttpPost("createUser")]
